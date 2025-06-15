@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "SwarmUI CivitAI Post Assistant",
+  "version": "1.0.0",
+  "description": "Chrome extension for posting SwarmUI images to CivitAI",
+  "permissions": ["activeTab", "scripting", "declarativeContent"],
+  "host_permissions": ["https://civitai.com/posts/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_title": "Click to post current image to CivitAI"
+  }
+}
