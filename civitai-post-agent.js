@@ -238,7 +238,8 @@ function civitPostAgentCreateDataTransferFromImages(data) {
   // Create a DataTransfer and add a File created directly from the Uint8Array
   const dataTransfer = new DataTransfer();
   const fileType = ext === 'jpg' ? 'image/jpeg' : 'image/png';
-  dataTransfer.items.add(new File([bytes], baseName, {type: fileType}));
+  dataTransfer.items.add(new File([bytes], baseName, {type: fileType}))
+  DataTransferItem.prototype.getAsFileSystemHandle = null // stop Civit from trying to use this as a file handle
   return dataTransfer;
 }
 
